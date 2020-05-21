@@ -1,4 +1,5 @@
 import data.Computer;
+import logic.ComputerOperator;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,10 +13,7 @@ class ComputerStore {
         computers.add(new Computer("dell 234", 3600, 8192));
         computers.add(new Computer("apple imac27", 3600, 8192));
         computers.add(new Computer("apple imac27", 3200, 16384));
-        
-        Collections.sort(computers);
-        for (Computer computer : computers) {
-            System.out.println(computer);
-        }
+
+        ComputerOperator.runSortMenu(computers);
     }
 }

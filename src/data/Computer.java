@@ -1,14 +1,35 @@
 package data;
 
+import java.util.Comparator;
+
 public class Computer implements Comparable<Computer> {
     private String name;
-    private int cpu;
-    private int memory;
+    private Integer cpu;
+    private Integer memory;
 
     public Computer(String name, int cpu, int memory) {
         this.name = name;
         this.cpu = cpu;
         this.memory = memory;
+    }
+
+    public static class ComputerNameComparator implements Comparator<Computer> {
+        @Override
+        public int compare(Computer c1, Computer c2) {
+            return c1.getName().compareTo(c2.getName());
+        }
+    }
+    public static class ComputerCpuComparator implements Comparator<Computer> {
+        @Override
+        public int compare(Computer c1, Computer c2) {
+            return c1.getCpu().compareTo(c2.getCpu());
+        }
+    }
+    public static class ComputerMemoryComparator implements Comparator<Computer> {
+        @Override
+        public int compare(Computer c1, Computer c2) {
+            return c1.getMemory().compareTo(c2.getMemory());
+        }
     }
 
     public String getName() {
@@ -19,7 +40,7 @@ public class Computer implements Comparable<Computer> {
         this.name = name;
     }
 
-    public int getCpu() {
+    public Integer getCpu() {
         return cpu;
     }
 
@@ -27,7 +48,7 @@ public class Computer implements Comparable<Computer> {
         this.cpu = cpu;
     }
 
-    public int getMemory() {
+    public Integer getMemory() {
         return memory;
     }
 
@@ -58,4 +79,6 @@ public class Computer implements Comparable<Computer> {
                 ", memory=" + memory +
                 '}';
     }
+
+
 }
