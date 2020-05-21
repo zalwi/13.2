@@ -11,6 +11,7 @@ class ComputerStore {
         computers.add(new Computer("hp 123", 4000, 8192));
         computers.add(new Computer("apple imac27", 3600, 4096));
         computers.add(new Computer("dell 234", 3600, 8192));
+        computers.add(new Computer(null, 3500, 8192));
         computers.add(new Computer("apple imac27", 3600, 8192));
         computers.add(new Computer("apple imac27", 3200, 16384));
 
