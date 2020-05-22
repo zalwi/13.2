@@ -3,6 +3,7 @@ package logic;
 import data.Computer;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -37,17 +38,23 @@ public class ComputerOperator {
                 }
                 case NAME -> {
                     System.out.println("Wybrano: " + NAME);
-                    Collections.sort(computers, new Computer.ComputerNameComparator());
+                    Collections.sort(   computers,
+                                        Comparator.comparing(   Computer::getName,
+                                                                Comparator.nullsFirst(Comparator.naturalOrder())));
                     printComputerList(computers, "\nSortowanie po nazwie");
                 }
                 case CPU -> {
                     System.out.println("Wybrano: " + CPU);
-                    Collections.sort(computers, new Computer.ComputerCpuComparator());
+                    Collections.sort(   computers,
+                                        Comparator.comparing(   Computer::getCpu,
+                                                                Comparator.nullsFirst(Comparator.naturalOrder())));
                     printComputerList(computers, "\nSortowanie po CPU");
                 }
                 case MEMORY -> {
                     System.out.println("Wybrano: " + MEMORY);
-                    Collections.sort(computers, new Computer.ComputerMemoryComparator());
+                    Collections.sort(   computers,
+                                        Comparator.comparing(   Computer::getMemory,
+                                                                Comparator.nullsFirst(Comparator.naturalOrder())));
                     printComputerList(computers, "\nSortowanie po ilości pamięci");
                 }
                 case QUIT -> {
