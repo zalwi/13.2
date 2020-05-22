@@ -1,7 +1,5 @@
 package data;
 
-import java.util.Comparator;
-
 public class Computer implements Comparable<Computer> {
     private String name;
     private Integer cpu;
@@ -17,24 +15,12 @@ public class Computer implements Comparable<Computer> {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Integer getCpu() {
         return cpu;
     }
 
-    public void setCpu(int cpu) {
-        this.cpu = cpu;
-    }
-
     public Integer getMemory() {
         return memory;
-    }
-
-    public void setMemory(int memory) {
-        this.memory = memory;
     }
 
     @Override
